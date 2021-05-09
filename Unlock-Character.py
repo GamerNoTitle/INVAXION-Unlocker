@@ -7,7 +7,7 @@ except FileNotFoundError:
 try:
     i=0
     while True:
-        if winreg.EnumValue(invaxionReg,i)[0].find("Offline_PlayerThemeList")!=-1:
+        if winreg.EnumValue(invaxionReg,i)[0].find("Offline_PlayerCharList")!=-1:
             global index
             index=i
             break
