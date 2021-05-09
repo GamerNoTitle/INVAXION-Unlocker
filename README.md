@@ -14,6 +14,10 @@ Here I've provided a theme unlocker (~~Cancer has not been able to unlock yet~~ 
 
 Visit release page, download the program. Then go to the dictionary you save the file, hold your **Shift** on your keyboard and right click your mouse, then click Run Prompt/Powershell. Input the file name and press tab, then press enter.
 
+### 电脑有python环境/If your PC has a python environment
+
+直接下载源码运行即可/Directly clone the source code and run it
+
 ## 我该如何得到一份存档/How can i get a save
 
 你可以访问[https://share4nothing.ml/Share/%E9%9F%B3%E7%81%B5%E5%85%A8%E8%A7%A3%E9%94%81%E5%AD%98%E6%A1%A3.reg](https://share4nothing.ml/Share/%E9%9F%B3%E7%81%B5%E5%85%A8%E8%A7%A3%E9%94%81%E5%AD%98%E6%A1%A3.reg)直接下载我的存档（只打了全歌曲补丁）
