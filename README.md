@@ -6,6 +6,14 @@
 
 Here I've provided a theme unlocker (~~Cancer has not been able to unlock yet~~ SRY i've finished it), you can download it from [RELEASE](https://github.com/GamerNoTitle/INVAXION-Unlocker/releases/tag/ThemeUnlocker), then just open the excutable file and patch it.
 
+## 怎么使用/How to use?
+
+### 电脑无python环境/If your PC has no a python environment
+
+访问Release界面，下载程序，在程序的保存目录按住shift然后按鼠标右键，点击运行命令行/powershell，输入文件名，按一下tab，回车即可！
+
+Visit release page, download the program. Then go to the dictionary you save the file, hold your **Shift** on your keyboard and right click your mouse, then click Run Prompt/Powershell. Input the file name and press tab, then press enter.
+
 ## 我该如何得到一份存档/How can i get a save
 
 你可以访问[https://share4nothing.ml/Share/%E9%9F%B3%E7%81%B5%E5%85%A8%E8%A7%A3%E9%94%81%E5%AD%98%E6%A1%A3.reg](https://share4nothing.ml/Share/%E9%9F%B3%E7%81%B5%E5%85%A8%E8%A7%A3%E9%94%81%E5%AD%98%E6%A1%A3.reg)直接下载我的存档（只打了全歌曲补丁）
