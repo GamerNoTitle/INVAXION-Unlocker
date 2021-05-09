@@ -1,5 +1,7 @@
 # INVAXION-Unlocker
 
+**电脑装了Python的可以下载源码运行，打包好的程序好像有ImportError（取决于你的电脑）**
+
 音灵解锁工具，在这里先提供了解锁主题的工具（~~除了巨蟹号，因为它还没分析出来~~ 对不起已经搞定了），在[RELEASE](https://github.com/GamerNoTitle/INVAXION-Unlocker/releases/tag/ThemeUnlocker)里面可以直接下载打包好的文件
 
 Here I've provided a theme unlocker (~~Cancer has not been able to unlock yet~~ SRY i've finished it), you can download it from [RELEASE](https://github.com/GamerNoTitle/INVAXION-Unlocker/releases/tag/ThemeUnlocker), then just open the excutable file and patch it.
