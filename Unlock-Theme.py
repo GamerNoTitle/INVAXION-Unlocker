@@ -20,5 +20,5 @@ except WindowsError:
 winreg.SetValueEx(invaxionReg,winreg.EnumValue(invaxionReg,index)[0],0,winreg.REG_BINARY,b'[{"themeId":1},{"themeId":2},{"themeId":3},{"themeId":4},{"themeId":5},{"themeId":6},{"themeId":7},{"themeId":8},{"themeId":9},{"themeId":10},{"themeId":11},{"themeId":12},{"themeId":13},{"themeId":14}]\x00')
 winreg.CloseKey(invaxionReg)
 print("Unlocked/解锁成功")
-input("Press any key to contiune.../按任意键继续……")
+input("Press ENTER to contiune.../按回车键继续……")
 
