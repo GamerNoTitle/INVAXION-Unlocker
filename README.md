@@ -18,9 +18,9 @@ Visit release page, download the program. Then go to the dictionary you save the
 
 ## 我该如何得到一份存档/How can i get a save
 
-你可以访问[https://share4nothing.ml/Share/%E9%9F%B3%E7%81%B5%E5%85%A8%E8%A7%A3%E9%94%81%E5%AD%98%E6%A1%A3.reg](https://share4nothing.ml/Share/%E9%9F%B3%E7%81%B5%E5%85%A8%E8%A7%A3%E9%94%81%E5%AD%98%E6%A1%A3.reg)直接下载我的存档（只打了全歌曲补丁）
+你可以访问[https://share4nothing.cf/s/54dwlv](https://share4nothing.cf/s/54dwlv)直接下载我的存档（只打了全歌曲补丁）
 
-You can visit [https://share4nothing.ml/Share/INVAXION%20100%20Percent%20Save.reg](https://share4nothing.ml/Share/INVAXION%20100%20Percent%20Save.reg) to get a save file. This file only contains full music unlock.
+You can visit [https://share4nothing.cf/s/sdf0f6](https://share4nothing.cf/s/sdf0f6) to get a save file. This file only contains full music unlock.
 
 ## Credit
 
