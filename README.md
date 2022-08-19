@@ -22,6 +22,12 @@ Visit release page, download the program. Then go to the dictionary you save the
 
 You can visit [https://share4nothing.cf/Public/INVAXION%20100%20Percent%20Save.reg](https://share4nothing.cf/Public/INVAXION%20100%20Percent%20Save.reg) to get a save file. This file only contains full music unlock.
 
+## 私服/Server Emulator
+
+请前往 https://github.com/Invaxion-Server-Emulator/invaxion-server-emulator 查看
+
+Check it here: https://github.com/Invaxion-Server-Emulator/invaxion-server-emulator
+
 ## Credit
 
 [sht2017/Unlock-INVAXION-](https://github.com/sht2017/Unlock-INVAXION-)
