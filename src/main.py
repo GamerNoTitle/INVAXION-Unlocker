@@ -42,12 +42,12 @@ def main(page: ft.Page):
     # 动态设置窗口大小
     page.window.width = 600  # 设置窗口宽度
     page.window.height = 400  # 设置窗口高度
-    page.window.resizable = True  # 允许用户调整窗口大小（可选）
+    page.window.resizable = False  # 允许用户调整窗口大小
     
     # 加载语言文件
     lang = load_language()
 
-    page.title = lang.get("app_title", "INVAXION File Detector")
+    page.title = lang.get("app_title", "INVAXION Patch Tool - GamerNoTitle")
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
