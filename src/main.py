@@ -86,7 +86,7 @@ def main(page: ft.Page):
     )
     steam_button = ft.ElevatedButton(
         lang.get("steam", "Developer's Steam"),
-        on_click=lambda e: page.launch_url("https://steamcommuntiy.com/id/bili33")
+        on_click=lambda e: page.launch_url("https://steamcommunity.com/id/bili33")
     )
     sponsor_button = ft.ElevatedButton(
         lang.get("sponsor", "Sponsor"),
