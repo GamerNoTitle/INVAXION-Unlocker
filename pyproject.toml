@@ -1,0 +1,53 @@
+[project]
+name = "invaxion-unlocker"
+version = "2.0.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "GamerNoTitle", email = "GamerNoTitle@outlook.com" }
+]
+dependencies = [
+  "flet==0.28.3"
+]
+
+[tool.flet]
+# org name in reverse domain name notation, e.g. "com.mycompany".
+# Combined with project.name to build bundle ID for iOS and Android apps
+org = "dev.gamernotitle.invaxionunlocker"
+
+# project display name that is used as an app title on Android and iOS home screens,
+# shown in window titles and about app dialogs on desktop.
+product = "invaxion-unlocker"
+
+# company name to display in about app dialogs
+company = "GamerNoTitle"
+
+# copyright text to display in about app dialogs
+copyright = "Copyright (C) 2025 by GamerNoTitle"
+
+[tool.flet.app]
+path = "src"
+
+[tool.uv]
+dev-dependencies = [
+    "flet[all]==0.28.3",
+]
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+flet = {extras = ["all"], version = "0.28.3"}
+
+[tool.flet.app.boot_screen]
+show = true
+message = "Preparing the app. Please wait..."
+
+[tool.flet.app.icon]
+# Path to the app icon file. The icon will be used on Android, iOS, and desktop.
+path = "assets/icon.png"
+
+[tool.flet.app.splash_screen]
+# Path to the splash screen image file. The splash screen will be shown on Android, iOS, and desktop.
+path = "assets/splash.png"
