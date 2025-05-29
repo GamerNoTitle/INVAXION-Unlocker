@@ -1,0 +1,62 @@
+name: Build on Windows
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      PYTHONUTF8: 1
+      PYTHONIOENCODING: utf-8
+      POWERSHELL_TELEMETRY_OPTOUT: 1
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    - name: Install Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Install uv
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install uv
+      shell: powershell
+
+    - name: Sync dependencies with uv
+      run: |
+        uv sync
+      shell: powershell
+
+    - name: Run build script
+      run: |
+        if (Test-Path build.ps1) {
+          .\build.ps1
+        } else {
+          Write-Error "build.ps1 not found!"
+          exit 1
+        }
+      shell: powershell
+
+    - name: Get version from pyproject.toml
+      id: get_version
+      run: |
+        $version = (Get-Content pyproject.toml | Select-String -Pattern 'version = "([^"]+)"').Matches.Groups[1].Value
+        Write-Host "Extracted version: $version"
+        Write-Host "VERSION=$version" >> $GITHUB_ENV
+        echo "version=$version" >> $env:GITHUB_OUTPUT
+      shell: powershell
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: INVAXION-Unlocker-${{ steps.get_version.outputs.version }}
+        path: build/windows
