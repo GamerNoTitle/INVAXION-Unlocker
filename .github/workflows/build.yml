@@ -44,7 +44,6 @@ jobs:
           Write-Error "build.ps1 not found!"
           exit 1
         }
-        cp lang build/windows/lang
       shell: powershell
 
     - name: Get version from pyproject.toml
