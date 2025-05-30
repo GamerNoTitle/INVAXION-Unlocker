@@ -6,7 +6,6 @@ import re
 import winreg
 import locale
 
-
 def load_language(lang_code: str = None) -> Dict:
     """
     加载语言文件，如果指定语言不存在则回退到英语。
@@ -17,105 +16,34 @@ def load_language(lang_code: str = None) -> Dict:
             if locale.getdefaultlocale()[0]
             else "en"
         )
-    en_lang = {
-        "app_title": "INVAXION Patch Tool - GamerNoTitle",
-        "copyright": "Copyright © 2025 GamerNoTitle. All rights reserved.\nINVAXION 音灵 is a registed trademark of Aquatrax.\nThe developer of this tool is not affiliated with Aquatrax.",
-        "github": "Github",
-        "select_directory": "Select Directory",
-        "patch_all": "Patch All",
-        "patch_char": "Patch Character",
-        "patch_song": "Patch Song",
-        "patch_theme": "Patch Theme",
-        "no_directory_selected": "No Directory Selected",
-        "read_success_title": "Successfully Read",
-        "read_success_content": "Successfully found Song, Character, and theme data",
-        "error_title": "Error",
-        "error_invaxion_exe": "INVAXION.exe not found. Please ensure you have selected the game directory or that the game is installed correctly.",
-        "error_invaxion_data": "INVAXION_DATA folder not found. Please ensure you have selected the game directory or that the game is installed correctly.",
-        "error_streaming_assets": "StreamingAssets folder not found. Please ensure you have selected the game directory or that the game is installed correctly.",
-        "warning_title": "Warning",
-        "warning_empty_data": "Data for {key_name} is empty: {data_str}",
-        "warning_empty_bytes": "Encoded data is empty, cannot write to {key_name}",
-        "warning_partial_failure": "Partial Patch failed, please check error messages!",
-        "steam": "Developer's Steam",
-        "success_title": "Completed",
-        "success_patch_all": "Successfully Patched Character, Song, and Starship",
-        "success_patch_char": "Successfully Patched Character",
-        "success_patch_song": "Successfully Patched Song",
-        "success_patch_theme": "Successfully Patched Starship",
-        "registry_error": "Registry write error ({key_name}): {error_msg}",
-    }
-    zh_cn_lang = {
-        "app_title": "INVAXION 音灵全解锁补丁 - GamerNoTitle",
-        "copyright": "Copyright © 2025 GamerNoTitle, 保留所有权利。\nNVAXION 音灵是 Aquatrax 的注册商标。\n本工具的开发者与 Aquatrax 无关。",
-        "github": "Github",
-        "select_directory": "选择游戏目录",
-        "patch_all": "我全都要！",
-        "patch_char": "应用补丁到角色",
-        "patch_song": "应用补丁到铺面",
-        "patch_theme": "应用补丁到星舰",
-        "no_directory_selected": "未选择目录",
-        "read_success_title": "读取成功",
-        "read_success_content": "成功找到铺面、角色和星舰数据",
-        "error_title": "错误",
-        "error_invaxion_exe": "未找到 INVAXION.exe，请确认你选择的是游戏所在的目录或者游戏安装完整。",
-        "error_invaxion_data": "未找到 INVAXION_DATA 文件夹，请确认你选择的是游戏所在的目录或者游戏安装完整。",
-        "error_streaming_assets": "未找到 StreamingAssets 文件夹，请确认你选择的是游戏所在的目录或者游戏安装完整。",
-        "warning_title": "警告",
-        "warning_empty_data": "写入 {key_name} 的数据为空: {data_str}",
-        "warning_empty_bytes": "编码后的数据为空，无法写入 {key_name}",
-        "warning_partial_failure": "部分数据应用补丁失败，请检查错误信息！",
-        "steam": "我的 Steam",
-        "success_title": "完成",
-        "success_patch_all": "成功应用补丁到角色、铺面和星舰",
-        "success_patch_char": "成功应用补丁到角色",
-        "success_patch_song": "成功应用补丁到铺面",
-        "success_patch_theme": "成功应用补丁到星舰",
-        "registry_error": "注册表写入错误 ({key_name}): {error_msg}",
-    }
-    zh_tw_lang = {
-        "app_title": "INVAXION 音靈全解鎖補丁 - GamerNoTitle",
-        "copyright": "Copyright © 2025 GamerNoTitle，保留所有權利。\nINVAXION 音靈是 Aquatrax 的註冊商標。\n本工具的開發者與 Aquatrax 無關。",
-        "github": "Github",
-        "select_directory": "選擇遊戲目錄",
-        "patch_all": "我全都要！",
-        "patch_char": "應用補丁到角色",
-        "patch_song": "應用補丁到譜面",
-        "patch_theme": "應用補丁到星艦",
-        "no_directory_selected": "未選擇目錄",
-        "read_success_title": "讀取成功",
-        "read_success_content": "成功找到譜面、角色和星艦資料",
-        "error_title": "錯誤",
-        "error_invaxion_exe": "未找到 INVAXION.exe，請確認您選擇的是遊戲所在的目錄或遊戲安裝完整。",
-        "error_invaxion_data": "未找到 INVAXION_DATA 資料夾，請確認您選擇的是遊戲所在的目錄或遊戲安裝完整。",
-        "error_streaming_assets": "未找到 StreamingAssets 資料夾，請確認您選擇的是遊戲所在的目錄或遊戲安裝完整。",
-        "warning_title": "警告",
-        "warning_empty_data": "寫入 {key_name} 的資料為空: {data_str}",
-        "warning_empty_bytes": "編碼後的資料為空，無法寫入 {key_name}",
-        "warning_partial_failure": "部分資料應用補丁失敗，請檢查錯誤訊息！",
-        "steam": "我的 Steam",
-        "success_title": "完成",
-        "success_patch_all": "成功應用補丁到角色、譜面和星艦",
-        "success_patch_char": "成功應用補丁到角色",
-        "success_patch_song": "成功應用補丁到譜面",
-        "success_patch_theme": "成功應用補丁到星艦",
-        "registry_error": "登錄檔寫入錯誤 ({key_name}): {error_msg}",
-    }
-    
-    if lang_code.startswith("zh-CN"):
-        return zh_cn_lang
-    elif lang_code.startswith("zh-TW"):
-        return zh_tw_lang
-    else:
-        return en_lang
 
+    lang_folder = "assets/lang"
+    lang_file = os.path.join(lang_folder, f"{lang_code}.json")
+    fallback_file = os.path.join(lang_folder, "en.json")
+
+    # 确保 lang 文件夹存在
+    if not os.path.exists(lang_folder):
+        os.makedirs(lang_folder)
+
+    # 尝试加载指定语言文件
+    if os.path.exists(lang_file):
+        with open(lang_file, "r", encoding="utf-8") as f:
+            return json.load(f)
+    else:
+        # 如果不存在，尝试加载英语文件
+        if os.path.exists(fallback_file):
+            with open(fallback_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        else:
+            # 如果英语文件也不存在，返回空字典（或硬编码默认值，这里省略）
+            return {}
 
 def main(page: ft.Page):
     # 动态设置窗口大小
     page.window.width = 600  # 设置窗口宽度
     page.window.height = 400  # 设置窗口高度
     page.window.resizable = False  # 允许用户调整窗口大小
-
+    
     # 加载语言文件
     lang = load_language()
 
@@ -151,20 +79,18 @@ def main(page: ft.Page):
         on_click=lambda e: patch_single("theme"),
         disabled=True,
     )
-
+    
     github_button = ft.ElevatedButton(
         lang.get("github", "GitHub"),
-        on_click=lambda e: page.launch_url(
-            "https://github.com/GamerNoTitle/INVAXION-Unlocker"
-        ),
+        on_click=lambda e: page.launch_url("https://github.com/GamerNoTitle/INVAXION-Unlocker")
     )
     steam_button = ft.ElevatedButton(
         lang.get("steam", "Developer's Steam"),
-        on_click=lambda e: page.launch_url("https://steamcommunity.com/id/bili33"),
+        on_click=lambda e: page.launch_url("https://steamcommunity.com/id/bili33")
     )
     sponsor_button = ft.ElevatedButton(
         lang.get("sponsor", "Sponsor"),
-        on_click=lambda e: page.launch_url("https://bili33.top/sponsors"),
+        on_click=lambda e: page.launch_url("https://bili33.top/sponsors")
     )
 
     # 全局变量存储数据
@@ -438,10 +364,7 @@ def main(page: ft.Page):
                 ),
                 ft.Divider(),
                 ft.Text(
-                    lang.get(
-                        "copyright",
-                        "Copyright © 2025 GamerNoTitle. All rights reserved.\nINVAXION 音灵 is a registed trademark of Aquatrax.\nThe developer of this tool is not affiliated with Aquatrax.",
-                    ),
+                    lang.get("copyright", "Copyright © 2025 GamerNoTitle. All rights reserved.\nINVAXION 音灵 is a registed trademark of Aquatrax.\nThe developer of this tool is not affiliated with Aquatrax."),
                     size=14,
                     text_align=ft.TextAlign.CENTER,
                 ),
@@ -451,7 +374,6 @@ def main(page: ft.Page):
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,
         )
     )
-
 
 if __name__ == "__main__":
     ft.app(target=main)
